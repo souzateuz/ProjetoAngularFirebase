@@ -13,18 +13,18 @@ import { increment } from '@angular/fire/firestore';
 })
 export class HomePage {
 
-  pokemon:any = {
-    nome: null,
-    poder: null
-  };
+  url: string = `https://restcountries.com/v3.1/all?fields=name,flags`;
+  is_loading: boolean = false;
+  dados: any = null;
 
-  constructor(
-    public crudService: CrudService
-  ){}
-
-  enviar(){
-    this.crudService.insert(this.pokemon, 'pokemons')
+  constructor(){
+    fetch(this.url)
+    .then(dados => dados.json())
+    .then(dados => {console.log(dados); this.dados = dados;})
+    .catch(_ => {console.log(_);})
+    .finally(()=>{console.log('Requisição Finalizada!')})
   }
-   
+
+  
 
 }
