@@ -11,20 +11,94 @@ import { increment } from '@angular/fire/firestore';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
+  
 
-  url: string = `https://restcountries.com/v3.1/all?fields=name,flags`;
-  is_loading: boolean = false;
-  dados: any = null;
-
-  constructor(){
-    fetch(this.url)
-    .then(dados => dados.json())
-    .then(dados => {console.log(dados); this.dados = dados;})
-    .catch(_ => {console.log(_);})
-    .finally(()=>{console.log('Requisição Finalizada!')})
+  perfil: any = {
+    nome: null,
+    profissao: null,
+    nome_usuario: null,
+    idioma: null,
+    localidade: null,
+    data_inicio: null,
+    biografia: null,
+    estatiticas: {
+      curtidas: 0,
+      seguidores: 0,
+      amigos: 0
+    },
+  postagens: [
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'São Paulo maior time do Brasil',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'palmeiras não tem mundial',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'corinthians menor de São Paulo',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'São Paulo maior time do Brasil',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'palmeiras não tem mundial',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'corinthians menor de São Paulo',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'São Paulo maior time do Brasil',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'palmeiras não tem mundial',
+      data: '12/03/2025'
+    },
+    {
+      foto: 'https://avatars.githubusercontent.com/u/198257837?v=4',
+      nome: 'Teteuz',
+      nome_usuario: '@souza',
+      texto: 'corinthians menor de São Paulo',
+      data: '12/03/2025'
+    }
+  ]
   }
 
-  
+  constructor() {
+
+  }
+
+
 
 }
